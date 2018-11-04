@@ -1,0 +1,10 @@
+  - platform: mqtt
+    name: "Location Humidity"
+    state_topic: "/Temp_Hum/ambient"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.humidity | round(1) }}'
+  - platform: mqtt
+    state_topic: "/Temp_Hum/ambient"
+    name: "Location Temperature"
+    unit_of_measurement: "°C"
+    value_template: '{{ value_json.temperature | round(1) }}'
